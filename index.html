@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Test</title>
+    <script src="main.js"></script>
+</head>
+<body>
+        <div id="content" style="width:960px; margin:0 auto;"></div>
+
+        <table align="left">
+                        <tr>
+                          <td>
+                                        <input type="range" min="1" max="10" id="out">Output Neurons</input>
+                                        <br>
+                                        <input type="range" min="1" max="16" id="hidden">Hidden Neurons</input>
+                                        <br>
+                                        <input type="range" min="1" max="10" id="in">Input Neurons</input>
+                                        <br>
+                                        <input type="range" min="1" max="6" id="layers">Layers</input>
+                                        
+                          </td>
+                          <td>
+                                        <input type="range" min="0" max="2" step=".05" id="weight">Weight scale</input>
+                                        <br>
+                                        
+                                        <input type="range" min="0" max="1" id="bias">Bias</input>
+                                        <br>
+                                        <input type="range" value="0" min="0" max="3" id="activation"></input><text id="activation_label"></text>
+                                        <br>
+                                        <input type="range" value=".05" min="0" max=".1" step=".001" id="lr"></input><input type="text" id="lr_text"></text>
+                                        
+                          </td>
+                          <td>
+                                        <text id="data_key">Data key:</text>
+                                        <br>
+                                        <button type="button" id="clear_data">Clear Data</button>
+                                        <br>
+                                        <button type="button" id="rand_weights">Randomize Weights</button>
+                                        <br>
+                                        <text>a-z to store data examples. t to train. Cmd+click to zero out a connection.</text>
+                          </td>
+                        </tr>
+                      </table>
+</body>
+
+</html>
