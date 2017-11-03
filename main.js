@@ -7,6 +7,7 @@ var scale = 2;
 var mouse = {x: 0, y: 0};
 var mouse_down = false;
 var objs = [];
+var net_layers = [];
 var keys = {};
 var data_key;
 var learning_rate = .1;
@@ -195,6 +196,8 @@ function loop() {
         let obj = objs[i];
         obj.render();
     }
+
+    
     
     window.requestAnimationFrame(loop);
 }
@@ -573,6 +576,7 @@ function network(layers, bias) {
         py = h/(num_layers - 1);
     }
 
+    net_layers = []; // global of neurons arranged in layers
     let new_objs = [];
     let last_layer = [];
     for (let i = 0; i < num_layers; i ++) {
@@ -608,8 +612,12 @@ function network(layers, bias) {
             new_objs.push(n);
         }
 
+        net_layers.push(cur_layer);
+
         last_layer = cur_layer;
     }
+
+    console.log(net_layers);
 
     return new_objs;
 }
